@@ -1,10 +1,12 @@
 var img;
+var snowlocation = 0
+var snowmove = 0
 
 function preload() {
-  img = loadImage('assets/rutgersSymbol.js');
+  img = loadImage('rutgerssymbol.png');
 }
 function setup() {
- 	img = loadImage("assets/rutgersSymbol.js");
+
 	createCanvas(400, 400);
   fill(400);
 }
@@ -12,8 +14,9 @@ function setup() {
 
 function draw() {
   background(0, 200, 0);
- image(img, 0, 0);
 	translate(width / 2, height / 2);
+
+
 	rotate(2.350);
 	var c = color(255,255, 160); // Define color 'c'
 fill(c); // Use color variable 'c' as fill color
@@ -28,52 +31,66 @@ vertex(2, -98);
 vertex(100, 1);
 vertex(150, 2);
 endShape(CLOSE);
+
+
+rotate(3.95);{
+image(img, -25, 10, 60, 60);
+}
+
+rotate(2.350)
+c = color(255, 255, 255); // Update 'c' with grayscale value
+fill(c);
 	point(30, 20);
-point(80, 20);
-point(85, 50);
-point(30, 75);
-point(80, 40);
-point(50, 50);
-point(20, 20);
-point(-50, 20);
-point(-60, 35);
-point(-75, 10);
-point(-80, 20);
-point(80, 1);
-point(85, 10);
-point(30, 90);
-point(36, 40);
-point(36, -10);
-point(-10, 20);
-point(-50, 20);
-point(-60, 10);
-point(-75, -40);
-point(-60, -70);
-point(-75, 10);
-point(-80, 20);
-point(70, -10);
-point(85, 0);
-point(0, 90);
-point(0, -45);
-point(0, -10);
-point(0, -20);
-point(0, -90);
-point(0, -6);
-point(0, -40);
-point(20, 0);
-point(0, 40);
-point(-75, 0);
-point(-60, 0);
-point(-75,0);
-point(-80, 0);
-point(70, 0);
-point(85, 0);
-point(0, 90);
-point(0, -45);
-point(0, -10);
-point(0, -20);
-point(0, -90);
-point(0, -6);
-point(0, -40);
-point(20, 0);
+point(80 + snowlocation, 20 + snowmove);
+point(85 + snowlocation, 50 + snowmove);
+point(30 + snowlocation, 75 + snowmove);
+point(80 + snowlocation, 40 + snowmove);
+point(50 + snowlocation, 50 + snowmove);
+point(20 + snowlocation, 20 + snowmove);
+point(-50 + snowlocation, 20 + snowmove);
+point(-60 + snowlocation, 35 + snowmove);
+point(-75 + snowlocation, 10 + snowmove);
+point(-80 + snowlocation, 20 + snowmove);
+point(80 + snowlocation, 1 + snowmove);
+point(85 + snowlocation, 10 + snowmove);
+point(30 + snowlocation, 90 + snowmove);
+point(36 + snowlocation, 40 + snowmove);
+point(36 + snowlocation, -10 + snowmove);
+point(-10 + snowlocation, 20 + snowmove);
+point(-50 + snowlocation, 20 + snowmove);
+point(-60 + snowlocation, 10 + snowmove);
+point(-75 + snowlocation, -40 + snowmove);
+point(-60 + snowlocation, -70 + snowmove);
+point(-75 + snowlocation, 10 + snowmove);
+point(-80 + snowlocation, 20 + snowmove);
+point(70 + snowlocation, -10 + snowmove);
+point(85 + snowlocation, 0 + snowmove);
+point(0 + snowlocation, 90 + snowmove);
+point(0 + snowlocation, -45 + snowmove);
+point(0 + snowlocation, -10 + snowmove);
+point(0 + snowlocation, -20 + snowmove);
+point(0 + snowlocation, -90 + snowmove);
+point(0 + snowlocation, -6 + snowmove);
+point(0 + snowlocation, -40 + snowmove);
+point(20 + snowlocation, 0 + snowmove);
+point(0 + snowlocation, 40 + snowmove);
+point(-75 + snowlocation, 0 + snowmove);
+point(-60 + snowlocation, 0 + snowmove);
+point(-75 + snowlocation,0 + snowmove);
+point(-80 + snowlocation, 0 + snowmove);
+point(70 + snowlocation, 0 + snowmove);
+point(85 + snowlocation, 0 + snowmove);
+point(0 + snowlocation, 90 + snowmove);
+point(0 + snowlocation, -45 + snowmove);
+point(0 + snowlocation, -10 + snowmove);
+point(0 + snowlocation, -20 + snowmove);
+point(0 + snowlocation, -90 + snowmove);
+point(0 + snowlocation, -6 + snowmove);
+point(0 + snowlocation, -40 + snowmove);
+point(20 + snowlocation, 0 + snowmove);
+
+}
+function mouseMoved() {
+  snowlocation = snowlocation + random(-1, 1)
+  snowmove = snowmove +random(-2, 2)
 }
