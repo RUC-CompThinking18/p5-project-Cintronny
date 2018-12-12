@@ -13,7 +13,7 @@ function setup() {
 
 
 function draw() {
-  background(0, 200, 0);
+  background(255, 255, 255);
 	translate(width / 2, height / 2);
 
 
@@ -24,7 +24,7 @@ fill(c); // Use color variable 'c' as fill color
 stroke(14); // Don't draw a stroke around shapes
 	arc(0, 0, 200, 200, 0, HALF_PI + PI, CHORD);
 	beginShape();
-c = color(153, 0, 0); // Update 'c' with grayscale value
+c = color(255, 255, 255); // Update 'c' with grayscale value
 fill(c);
 vertex(1, -150);
 vertex(2, -98);
@@ -40,6 +40,8 @@ image(img, -25, 10, 60, 60);
 rotate(2.350)
 c = color(255, 255, 255); // Update 'c' with grayscale value
 fill(c);
+stroke(255, 255, 255);
+strokeWeight(4);
 	point(30, 20);
 point(80 + snowlocation, 20 + snowmove);
 point(85 + snowlocation, 50 + snowmove);
@@ -91,6 +93,9 @@ point(20 + snowlocation, 0 + snowmove);
 
 }
 function mouseMoved() {
-  snowlocation = snowlocation + random(-1, 1)
-  snowmove = snowmove +random(-2, 2)
+   snowlocation = snowlocation + 1
+
+}
+function mousePressed(){
+    snowmove = snowlocation + 9
 }
